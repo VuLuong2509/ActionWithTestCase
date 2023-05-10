@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class Information_Product {
 	public WebDriver driver;
-	
+	public String product ="//div[@class='col-lg-4 col-md-6 mb-4']//a[text()='%s']";
 	@BeforeMethod
 	public void BeforeRun() {
 		String url = "https://www.demoblaze.com/index.html";
@@ -32,7 +32,7 @@ public class Information_Product {
 	
 	@Test
 	public void InformationSSgalaxys6() {
-		WebElement clickbtnproduct = driver.findElement(By.xpath("//div[@class='col-lg-4 col-md-6 mb-4']//a[text()='Samsung galaxy s6']"));
+		WebElement clickbtnproduct = driver.findElement(By.xpath(String.format(product, "Samsung galaxy s6")));
 		clickbtnproduct.click();
 		
 		try {

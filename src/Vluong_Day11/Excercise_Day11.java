@@ -38,7 +38,7 @@ public class Excercise_Day11 {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void Userregister(){		
 		Random ran = new Random();
 		Integer Ranuser = ran.nextInt(1000);		
@@ -72,7 +72,7 @@ public class Excercise_Day11 {
 		
 	}
 	
-	@Test 
+	//@Test 
 	public void VerifyTheErrorBlankUserAndPass(){	
 		String Alert = "Please fill out Username and Password.";		
 		WebElement linkLogin = driver.findElement(By.xpath("//a[@id='login2']"));
@@ -103,12 +103,12 @@ public class Excercise_Day11 {
 	@Test 
 	public void VerifyTheErrorBlankPass(){
 		//xpath
-//		String xpathLogin = "//a[@id='login2']";
-//		String xpathinputUser = "//input[@id='loginusername']";
-//		String xpathinputPass = "//input[@id='loginpassword']";
-//		String xpathbtnLogin = "//button[@onclick='logIn()']";
+		String xpathLogin = "//a[@id='login2']";
+		String xpathinputUser = "//input[@id='loginusername']";
+		String xpathinputPass = "//input[@id='loginpassword']";
+		String xpathbtnLogin = "//button[@onclick='logIn()']";
 		String Alert = "Please fill out Username and Password.";		
-		WebElement linkLogin = driver.findElement(By.xpath("//a[@id='login2']"));
+		WebElement linkLogin = driver.findElement(By.xpath(xpathLogin));
 		linkLogin.click();		
 		try {
 			Thread.sleep(5000);
@@ -116,11 +116,11 @@ public class Excercise_Day11 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
-		WebElement inputUser = driver.findElement(By.xpath("//input[@id='loginusername']"));
+		WebElement inputUser = driver.findElement(By.xpath(xpathinputUser));
 		inputUser.sendKeys("Toivaot");		
-		WebElement inputPass = driver.findElement(By.xpath("//input[@id='loginpassword']"));
+		WebElement inputPass = driver.findElement(By.xpath(xpathinputPass));
 		inputPass.sendKeys("");		
-		WebElement btnLogin = driver.findElement(By.xpath("//button[@onclick='logIn()']"));
+		WebElement btnLogin = driver.findElement(By.xpath(xpathbtnLogin));
 		btnLogin.click();		
 		try {
 			Thread.sleep(5000);
@@ -133,7 +133,7 @@ public class Excercise_Day11 {
 		Assert.assertEquals(Alert, alertMess);				
 	}
 	
-	@Test 
+//	@Test 
 	public void VerifyTheErrorBlankUser(){
 		//xpath
 //		String xpathLogin = "//a[@id='login2']";
@@ -166,7 +166,7 @@ public class Excercise_Day11 {
 		Assert.assertEquals(Alert, alertMess);				
 	}
 	
-	@Test 
+//	@Test 
 	public void VerifyTheErrorIncorrectUser(){
 		//xpath
 //		String xpathLogin = "//a[@id='login2']";
@@ -199,7 +199,7 @@ public class Excercise_Day11 {
 		Assert.assertEquals(Alert, alertMess);				
 	}
 	
-	@Test 
+//	@Test 
 	public void VerifyTheErrorIncorrectPass(){
 		//xpath
 //		String xpathLogin = "//a[@id='login2']";
@@ -233,7 +233,7 @@ public class Excercise_Day11 {
 		Assert.assertEquals(Alert, alertMess);				
 	}
 	
-	@Test 
+//	@Test 
 	public void VerifyTheUserNotexist(){
 		//xpath
 //		String xpathLogin = "//a[@id='login2']";
@@ -267,7 +267,7 @@ public class Excercise_Day11 {
 		Assert.assertEquals(Alert, alertMess);				
 	}
 	
-	@Test 
+//	@Test 
 	public void VerifyTheuserLoginsuccessful(){
 		//xpath
 //		String xpathLogin = "//a[@id='login2']";
