@@ -5,7 +5,7 @@
 	<parameter name="browser"  value="Chrome"/>
     <classes>
     	
-    	<!-- <class name="Vluong_Day11.RegisterUser" /> -->
+    	<class name="Vluong_Day11.RegisterUser" />
     	<class name="Vluong_Day11.LoginUser" />
     </classes>
   </test>

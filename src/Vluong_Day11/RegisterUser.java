@@ -130,7 +130,6 @@ public class RegisterUser extends CommonService{
 		String ActualMess = eleMess.getText();
 		Assert.assertEquals(ActualMess, ExpectMessCreate);
 		
-		
 	}
 	
 	@Test

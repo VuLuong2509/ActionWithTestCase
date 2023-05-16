@@ -18,8 +18,7 @@ import org.testng.annotations.Parameters;
 
 public class CommonService {
 	public  WebDriver driver = null;
-	
-	
+		
 	@BeforeClass
 	@Parameters({"browser"})
 	public WebDriver Rundriver(String browser) {		

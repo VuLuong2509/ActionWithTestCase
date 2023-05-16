@@ -36,8 +36,7 @@ public class LoginUser extends CommonService{
 		WebElement clickBtnLogin = driver.findElement(By.xpath(btnLogin));
 		clickBtnLogin.click();
 		String EmailWrongFormat = getHtml5ValidationMessage(driver.findElement(By.xpath(eleEmail)));
-		Assert.assertEquals(EmailWrongFormat, "Please include an '@' in the email address. 'Toi.com' is missing an '@'.");
-		
+		Assert.assertEquals(EmailWrongFormat, "Please include an '@' in the email address. 'Toi.com' is missing an '@'.");		
 	}
 	
 	@Test
