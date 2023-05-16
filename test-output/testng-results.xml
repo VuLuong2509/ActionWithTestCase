@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="41151" started-at="2023-05-17T01:11:03 ICT" finished-at="2023-05-17T01:11:44 ICT">
+    <groups>
+    </groups>
+    <test name="RunCC" duration-ms="41151" started-at="2023-05-17T01:11:03 ICT" finished-at="2023-05-17T01:11:44 ICT">
+      <class name="Vluong_Day11.LoginUser">
+        <test-method status="PASS" signature="Rundriver(java.lang.String)[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="Rundriver" is-config="true" duration-ms="1944" started-at="2023-05-17T01:11:03 ICT" finished-at="2023-05-17T01:11:05 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rundriver -->
+        <test-method status="PASS" signature="TC_003LoginWithWrongFormatEmail()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_003LoginWithWrongFormatEmail" duration-ms="10403" started-at="2023-05-17T01:11:05 ICT" finished-at="2023-05-17T01:11:15 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_003LoginWithWrongFormatEmail -->
+        <test-method status="PASS" signature="TC_004LoginWithEmtyEmail()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_004LoginWithEmtyEmail" duration-ms="3904" started-at="2023-05-17T01:11:15 ICT" finished-at="2023-05-17T01:11:19 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_004LoginWithEmtyEmail -->
+        <test-method status="PASS" signature="TC_005LoginWithEmtyPass()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_005LoginWithEmtyPass" duration-ms="2907" started-at="2023-05-17T01:11:19 ICT" finished-at="2023-05-17T01:11:22 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_005LoginWithEmtyPass -->
+        <test-method status="PASS" signature="TC_006LoginWithWrongEmail()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_006LoginWithWrongEmail" duration-ms="3354" started-at="2023-05-17T01:11:22 ICT" finished-at="2023-05-17T01:11:25 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_006LoginWithWrongEmail -->
+        <test-method status="PASS" signature="TC_007LoginWithWrongPass()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_007LoginWithWrongPass" duration-ms="3451" started-at="2023-05-17T01:11:25 ICT" finished-at="2023-05-17T01:11:29 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_007LoginWithWrongPass -->
+        <test-method status="PASS" signature="TC_008LoginSuccessfuly()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_008LoginSuccessfuly" duration-ms="4430" started-at="2023-05-17T01:11:29 ICT" finished-at="2023-05-17T01:11:33 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_008LoginSuccessfuly -->
+        <test-method status="PASS" signature="TC_009UserCanLogout()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="TC_009UserCanLogout" duration-ms="10081" started-at="2023-05-17T01:11:33 ICT" finished-at="2023-05-17T01:11:43 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_009UserCanLogout -->
+        <test-method status="PASS" signature="AfterRun()[pri:0, instance:Vluong_Day11.LoginUser@32eebfca]" name="AfterRun" is-config="true" duration-ms="645" started-at="2023-05-17T01:11:43 ICT" finished-at="2023-05-17T01:11:44 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterRun -->
+      </class> <!-- Vluong_Day11.LoginUser -->
+    </test> <!-- RunCC -->
+  </suite> <!-- Suite1 -->
+</testng-results>
