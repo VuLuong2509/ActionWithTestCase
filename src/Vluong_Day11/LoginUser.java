@@ -7,6 +7,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginUser extends CommonService{
+	String xpathLogin = "//a[@href='/login']";
+	String eleEmail = "//input[@data-qa='login-email']";
+	String elePass = "//input[@data-qa='login-password']";
+	String btnLogin= "//button[@data-qa='login-button']"; 
+	
 	//handel HTML5 Validation by javascript
 	//Research from https://vntesters.com/java-webdriver-14-kiem-tra-html5-validation-message/
 	public String getHtml5ValidationMessage(WebElement element) {
@@ -18,15 +23,9 @@ public class LoginUser extends CommonService{
 	@Test
 	public void TC_003LoginWithWrongFormatEmail(){
 		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']"; 
 		String Expectalert = "Your email or password is incorrect!";
-		
 		String URL  = "https://automationexercise.com/";
-		driver.get(URL);
-		
+		driver.get(URL);	
 		WebElement clicklogin = driver.findElement(By.xpath(xpathLogin));
 		clicklogin.click();		
 		WebElement setEmail = driver.findElement(By.xpath(eleEmail));
@@ -42,15 +41,11 @@ public class LoginUser extends CommonService{
 	@Test
 	public void TC_004LoginWithEmtyEmail(){
 		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']"; 
+
 		String Expectalert = "Your email or password is incorrect!";
 		
 		String URL  = "https://automationexercise.com/";
-		driver.get(URL);
-		
+		driver.get(URL);	
 		WebElement clicklogin = driver.findElement(By.xpath(xpathLogin));
 		clicklogin.click();		
 		WebElement setEmail = driver.findElement(By.xpath(eleEmail));
@@ -66,15 +61,9 @@ public class LoginUser extends CommonService{
 	@Test
 	public void TC_005LoginWithEmtyPass(){
 		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']"; 
-		String Expectalert = "Your email or password is incorrect!";
-		
+		String Expectalert = "Your email or password is incorrect!";		
 		String URL  = "https://automationexercise.com/";
-		driver.get(URL);
-		
+		driver.get(URL);	
 		WebElement clicklogin = driver.findElement(By.xpath(xpathLogin));
 		clicklogin.click();		
 		WebElement setEmail = driver.findElement(By.xpath(eleEmail));
@@ -90,13 +79,8 @@ public class LoginUser extends CommonService{
 	@Test
 	public void TC_006LoginWithWrongEmail(){
 		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']";
 		String xpathlMess = "//p[@style='color: red;']";
-		String Expectalert = "Your email or password is incorrect!";
-		
+		String Expectalert = "Your email or password is incorrect!";		
 		String URL  = "https://automationexercise.com/";
 		driver.get(URL);		
 		WebElement clicklogin = driver.findElement(By.xpath(xpathLogin));
@@ -104,8 +88,7 @@ public class LoginUser extends CommonService{
 		WebElement setEmail = driver.findElement(By.xpath(eleEmail));
 		setEmail.sendKeys("lqhv@gmail.com");		
 		WebElement setPass = driver.findElement(By.xpath(elePass));
-		setPass.sendKeys("848126");
-		
+		setPass.sendKeys("848126");		
 		WebElement clickBtnLogin = driver.findElement(By.xpath(btnLogin));
 		clickBtnLogin.click();
 		WebElement getMess= driver.findElement(By.xpath(xpathlMess));
@@ -116,13 +99,8 @@ public class LoginUser extends CommonService{
 	@Test
 	public void TC_007LoginWithWrongPass(){
 		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']";
 		String xpathlMess = "//p[@style='color: red;']";
-		String Expectalert = "Your email or password is incorrect!";
-		
+		String Expectalert = "Your email or password is incorrect!";		
 		String URL  = "https://automationexercise.com/";
 		driver.get(URL);		
 		WebElement clicklogin = driver.findElement(By.xpath(xpathLogin));
@@ -130,8 +108,7 @@ public class LoginUser extends CommonService{
 		WebElement setEmail = driver.findElement(By.xpath(eleEmail));
 		setEmail.sendKeys("Toi@gmail.com");		
 		WebElement setPass = driver.findElement(By.xpath(elePass));
-		setPass.sendKeys("234234");
-		
+		setPass.sendKeys("234234");		
 		WebElement clickBtnLogin = driver.findElement(By.xpath(btnLogin));
 		clickBtnLogin.click();
 		WebElement getMess= driver.findElement(By.xpath(xpathlMess));
@@ -142,11 +119,7 @@ public class LoginUser extends CommonService{
 	
 	@Test
 	public void TC_008LoginSuccessfuly(){
-		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']"; 
+		//xpath 
 		String xpathMess= "(//ul[@class='nav navbar-nav'])/li[10]/a";
 		String Expectalert = "Your email or password is incorrect!";
 		String ExpectMess = "Logged in as toivaot";
@@ -159,8 +132,7 @@ public class LoginUser extends CommonService{
 		WebElement setPass = driver.findElement(By.xpath(elePass));
 		setPass.sendKeys("8438126");		
 		WebElement clickBtnLogin = driver.findElement(By.xpath(btnLogin));
-		clickBtnLogin.click();
-		
+		clickBtnLogin.click();		
 		WebElement getMess = driver.findElement(By.xpath(xpathMess));
 		String ActualMess = getMess.getText();
 		Assert.assertEquals(ActualMess, ExpectMess);
@@ -170,10 +142,6 @@ public class LoginUser extends CommonService{
 	@Test
 	public void TC_009UserCanLogout(){
 		//xpath
-		String xpathLogin = "//a[@href='/login']";
-		String eleEmail = "//input[@data-qa='login-email']";
-		String elePass = "//input[@data-qa='login-password']";
-		String btnLogin= "//button[@data-qa='login-button']"; 
 		String xpathLogout = "//a[@href='/logout']";
 		String URL  = "https://automationexercise.com/";
 		String ExpectURL = "https://automationexercise.com/login";
