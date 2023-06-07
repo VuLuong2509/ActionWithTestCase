@@ -1,21 +1,34 @@
 package Vluong_Day11;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.v85.debugger.Debugger.ExecuteWasmEvaluatorResponse;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 public class Information_Product extends CommonService{
 	
 	@Test
-	public void TC_010InforItemWomen() {
+	public void TC_010InforItemWomen() {	
+        test = extent.createTest("TC_010InforItemWomen");
+        
 		Data excel = new Data();
+		
+
 		
 		//Xpath
 		String xpathLinkProduct = "//a[@href='#Women']";
@@ -29,9 +42,10 @@ public class Information_Product extends CommonService{
 		String xpathConditionProduct = "//div[@class='product-information']/p[3]";
 		String xpathBrandProduct = "//div[@class='product-information']/p[4]";
 		driver.get(URL);
-		
+		test.info("Access to: " + URL);
 		WebElement clkLickPro = driver.findElement(By.xpath(xpathLinkProduct));
 		clkLickPro.click();
+		test.info("Click link Product");
 		
 		try {
 			Thread.sleep(2500);
@@ -41,27 +55,12 @@ public class Information_Product extends CommonService{
 		}
 		WebElement clkDress = driver.findElement(By.xpath(xpathDressWM));
 		clkDress.click();
+		test.info("Click Menu Product Women: ");
 		
-		
-		// handel ad google
-		String url_ads = "https://automationexercise.com/#google_vignette";
-		String current_URL = driver.getCurrentUrl();
-		if (current_URL.equalsIgnoreCase(url_ads)) {
-			WebElement ifr_ads = driver.findElement(By.xpath("//iframe[contains(@id,'aswift_5')]"));
-			driver.switchTo().frame(ifr_ads);
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			WebElement close_ads = driver.findElement(By.xpath("//div[@id='dismiss-button']"));
-			close_ads.click();
-			driver.switchTo().defaultContent();			
-		}
 		
 		WebElement clkProD1 = driver.findElement(By.xpath(xpathProD1));
 		clkProD1.click();
+		test.info("Click on DRESS product");
 		
 		String readdata = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 1);
 		System.out.println("data is " + readdata);
@@ -69,6 +68,7 @@ public class Information_Product extends CommonService{
 		String Name = VrfNameProduct.getText();
 		Assert.assertEquals(Name, readdata);
 		System.out.println("Verify Name Product");
+		test.info("Product Name: " + Name);
 		
 		String readdata1 = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 2);
 		System.out.println("data is " + readdata1);
@@ -76,6 +76,7 @@ public class Information_Product extends CommonService{
 		String Cata = VrfCateProduct.getText();
 		Assert.assertEquals(Cata, readdata1);
 		System.out.println("Verify Category Product");
+		test.info("Cate Product: " + Cata);
 		
 		String readdata2 = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 3);
 		System.out.println("data is " + readdata2);
@@ -83,6 +84,7 @@ public class Information_Product extends CommonService{
 		String Price = VrfPriceProdct.getText();
 		Assert.assertEquals(Price, readdata2);
 		System.out.println("Verify Price Product");
+		test.info("Price product: " + Price);
 		
 		String readdata3 = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 4);
 		System.out.println("data is " + readdata3);
@@ -90,6 +92,7 @@ public class Information_Product extends CommonService{
 		String Availability = VrfAvailabilityProduct.getText();
 		Assert.assertEquals(Availability, readdata3);
 		System.out.println("Verify Availability Product");
+		test.info("Availability product: " + Availability);
 		
 		String readdata4 = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 5);
 		System.out.println("data is " + readdata4);
@@ -97,6 +100,7 @@ public class Information_Product extends CommonService{
 		String Condition = VrfConditionProduct.getText();
 		Assert.assertEquals(Condition, readdata4);
 		System.out.println("Verify Condition Product");
+		test.info("Condition product: " + Condition);
 		
 		String readdata5 = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 6);
 		System.out.println("data is " + readdata5);
@@ -104,6 +108,17 @@ public class Information_Product extends CommonService{
 		String Brand = VrfBrandProduct.getText();
 		Assert.assertEquals(Brand, readdata5);
 		System.out.println("Verify Brand Product");
+		test.info("Brand product: " + Brand);
+		
+		
+		
+		try {
+			Thread.sleep(2500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 }

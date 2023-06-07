@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Vluong_Day11.RegisterUser">
+      <class name="Vluong_Day11.LoginUser">
         <methods>
+          <include name="TC_003LoginWithWrongFormatEmail"/>
           <include name="AfterRun"/>
-          <include name="TC_001RegisterNewUser"/>
+          <include name="TC_004LoginWithEmtyEmail"/>
+          <include name="saveAttachment"/>
           <include name="Rundriver"/>
         </methods>
-      </class> <!-- Vluong_Day11.RegisterUser -->
+      </class> <!-- Vluong_Day11.LoginUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

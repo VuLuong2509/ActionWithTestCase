@@ -8,6 +8,7 @@
         <methods>
           <include name="TC_010InforItemWomen"/>
           <include name="AfterRun"/>
+          <include name="saveAttachment"/>
           <include name="Rundriver"/>
         </methods>
       </class> <!-- Vluong_Day11.Information_Product -->

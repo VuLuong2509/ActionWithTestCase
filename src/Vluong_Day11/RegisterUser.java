@@ -22,6 +22,7 @@ import org.openqa.selenium.JavascriptExecutor;
 public class RegisterUser extends CommonService{
 	@Test
 	public void TC_001RegisterNewUser() {
+		test = extent.createTest("TC_001RegisterNewUser");
 		//Xpath Element
 		String xpathLogin = "//a[@href='/login']";
 		String xpathName = "//input[@name='name']"; // Name Element on "New User SignUp!" Table
@@ -62,29 +63,39 @@ public class RegisterUser extends CommonService{
 		// Teststep
 		WebElement btnlogin = driver.findElement(By.xpath(xpathLogin));
 		btnlogin.click();
+		test.info("Click btn Login");
 		WebElement inputName = driver.findElement(By.xpath(xpathName));
 		inputName.sendKeys("Toivaot" + RanInt);
+		test.info("Enter name: "+ inputName.getAttribute("value"));
 		String Name1 = inputName.getText(); //GetText for compare with "ENTER ACCOUNT INFORMATION" page
 		WebElement inputEmail = driver.findElement(By.xpath(xpathEmail));
 		inputEmail.sendKeys("Toivaot" + RanInt + "@gmail.com");
+		test.info("Enter Email: "+ inputEmail.getAttribute("value"));
 		String Email1 = inputEmail.getText();
 		WebElement btnSignUp = driver.findElement(By.xpath(xpathBtnSignUp));
-		btnSignUp.click();		
+		btnSignUp.click();
+		test.info("Click btn SignUp");
 		WebElement RaTitle = driver.findElement(By.xpath(xpathTileInfor));
 		RaTitle.click();
+		test.info("Click Title");
 		// Compare Name from "New User SignUp!" Table with "ENTER ACCOUNT INFORMATION" page
 		WebElement getName2 = driver.findElement(By.xpath(xpathNameInfor));
 		String Name2 = getName2.getText();
+		test.info("Get Name" + Name2);
 		Assert.assertEquals(Name2, Name1);
 		WebElement getEmail2 = driver.findElement(By.xpath(xpathEmailInfor));
 		String Email2 = getEmail2.getText();
+		test.info("Get Email" + Email2);
 		Assert.assertEquals(Email2, Email1);
 		// Continue Teststep
 		WebElement inputPass = driver.findElement(By.xpath(xpathPassInfor));
 		inputPass.sendKeys("Abc123456");
+		test.info("Enter Pass" + inputPass.getAttribute("value"));
 		WebElement EleDay = driver.findElement(By.xpath(xpathDayInfor));
 		Select seDay = new Select(EleDay);
 		seDay.selectByVisibleText("25");
+		String SelectDay = EleDay.getText();
+		test.info("Select Day" + SelectDay);
 		WebElement EleMonth = driver.findElement(By.xpath(xpathMonthInfo));
 		Select seMonth = new Select(EleMonth);
 		seMonth.selectByVisibleText("September");
@@ -134,6 +145,7 @@ public class RegisterUser extends CommonService{
 	
 	@Test
 	public void TC_002RegisterNewUserWithExistingEmail() {
+		test = extent.createTest("TC_002RegisterNewUserWithExistingEmail");
 		//Xpath Element
 		String xpathLogin = "//a[@href='/login']";
 		String xpathName = "//input[@name='name']"; // Name Element on "New User SignUp!" Table
@@ -150,13 +162,16 @@ public class RegisterUser extends CommonService{
 		btnlogin.click();
 		WebElement inputName = driver.findElement(By.xpath(xpathName));
 		inputName.sendKeys("Toivaot");
+		test.info("Enter Name" + inputName.getAttribute("value"));
 		WebElement inputEmail = driver.findElement(By.xpath(xpathEmail));
 		inputEmail.sendKeys("Toi@gmail.com");
+		test.info("Enter Email" + inputEmail.getAttribute("value"));
 		WebElement btnSignUp = driver.findElement(By.xpath(xpathBtnSignUp));
 		btnSignUp.click();
 		WebElement getMEss= driver.findElement(By.xpath(xpathMess));
 		String AcutalMess = getMEss.getText();
 		Assert.assertEquals(AcutalMess, expectMess);
+		test.info("Enter Compare Mess");
 		
 	}
 
