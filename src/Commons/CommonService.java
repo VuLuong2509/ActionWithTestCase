@@ -1,4 +1,4 @@
-package Vluong_Day11;
+package Commons;
 
 import java.io.File;
 
@@ -28,7 +28,7 @@ public class CommonService {
 	public static WebDriver driver = null;
 	public static ExtentReports extent;
 	public static ExtentTest test;
-	CommonFunc Func = new CommonFunc();
+	public static CommonFunc Func = new CommonFunc();
 	@BeforeTest
 	@Parameters({"browser"})
 	public WebDriver Rundriver(String browser) {
@@ -67,5 +67,7 @@ public class CommonService {
 	public void AfterRun() {
 		driver.quit();
 	}
+	
+	
 
 }

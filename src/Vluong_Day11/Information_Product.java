@@ -20,6 +20,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import Commons.CommonService;
+import Commons.Data;
+
 public class Information_Product extends CommonService{
 	
 	@Test
@@ -34,33 +37,23 @@ public class Information_Product extends CommonService{
 		String xpathLinkProduct = "//a[@href='#Women']";
 		String xpathDressWM = "//a[@href='/category_products/1']";
 		String xpathProD1 = "//a[@href='/product_details/3']";
-		String URL = "https://automationexercise.com/";
+		String url = "https://automationexercise.com/";
 		String xpathNameProduct = "(//h2)[3]";
 		String xpathCateProduct = "(//p)[3]";
 		String xpathPriceProduct = "(//span)[12]/span";
 		String xpathAvailabilityProduct = "//div[@class='product-information']/p[2]";
 		String xpathConditionProduct = "//div[@class='product-information']/p[3]";
 		String xpathBrandProduct = "//div[@class='product-information']/p[4]";
-		driver.get(URL);
-		test.info("Access to: " + URL);
-		WebElement clkLickPro = driver.findElement(By.xpath(xpathLinkProduct));
-		clkLickPro.click();
-		test.info("Click link Product");
-		
+		Func.open_url(driver, test, url);
+		Func.element_click(driver, test, xpathLinkProduct);		
 		try {
 			Thread.sleep(2500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		WebElement clkDress = driver.findElement(By.xpath(xpathDressWM));
-		clkDress.click();
-		test.info("Click Menu Product Women: ");
-		
-		
-		WebElement clkProD1 = driver.findElement(By.xpath(xpathProD1));
-		clkProD1.click();
-		test.info("Click on DRESS product");
+		Func.element_click(driver, test, xpathDressWM);
+		Func.element_click(driver, test, xpathProD1);
 		
 		String readdata = excel.DataExcel("./Resources/Data.xlsx", "Sheet1", 5, 1);
 		System.out.println("data is " + readdata);

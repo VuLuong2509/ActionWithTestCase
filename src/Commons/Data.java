@@ -1,4 +1,4 @@
-package Vluong_Day11;
+package Commons;
 
 import java.io.File;
 import java.io.FileInputStream;
