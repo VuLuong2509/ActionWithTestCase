@@ -9,8 +9,10 @@ import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 
 import Commons.CommonFunc;
+import Commons.Data;
 
 public class Page_AddCart {
+	Data excel = new Data();
 //	xpath
 	String xpathAddcart = "(//a[@class='btn btn-default add-to-cart'])[1]";
 	String xpathPopupAdd = "//h4[@class='modal-title w-100']";
@@ -45,16 +47,12 @@ public class Page_AddCart {
 	public void access_URL(ExtentTest test) {
 		func.open_url(local_driver, test, URL);
 	}
-	public void click_btnCart(ExtentTest test) {
-		WebElement handleClickAddCart = local_driver.findElement(By.xpath(xpathAddcart));
-		JavascriptExecutor js = (JavascriptExecutor)local_driver;
-		js.executeScript("arguments[0].click();", handleClickAddCart);
+	public void click_btnCart(ExtentTest test) {		
+		func.element_click_byJS(local_driver, test, xpathAddcart);
 	}
 	
-	public void click_btnContinue(ExtentTest test) {
-		WebElement handleClickContinue = local_driver.findElement(By.xpath(xpathbtnContinue));
-		JavascriptExecutor js = (JavascriptExecutor)local_driver;
-		js.executeScript("arguments[0].click();", handleClickContinue);
+	public void click_btnContinue(ExtentTest test) {		
+		func.element_click_byJS(local_driver, test, xpathbtnContinue);
 	}
 	
 	public void compareMessPopup(ExtentTest test) {
@@ -74,7 +72,7 @@ public class Page_AddCart {
 	public void getquanlity(ExtentTest test) {
 		WebElement Quantity = local_driver.findElement(By.xpath(xpathQuantity));
 		String SetQuan = Quantity.getText();
-		Assert.assertEquals(SetQuan, Quantity.getAttribute("textContent"));
+		Assert.assertEquals(SetQuan, func.getAttributeValues(local_driver, xpathQuantity, "textContent"));
 		test.info("Compare Product Quantity");
 	}
 	

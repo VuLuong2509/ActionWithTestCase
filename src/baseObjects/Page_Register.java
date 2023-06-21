@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 
@@ -41,6 +42,11 @@ public class Page_Register {
 			String xpathBtnCreate = "//button[@data-qa='create-account']";
 			String xpathMesstitle = "//h2[@class='title text-center']";
 			String ExpectMessCreate = "ACCOUNT CREATED!";
+			
+			String xpathLogout = "//a[@href='/logout']";
+
+			String xpathMess = "//p[@style='color: red;']";
+			String expectMess = "Email Address already exist!";
 			//URL
 			String URL = "https://automationexercise.com/";
 			
@@ -144,7 +150,30 @@ public class Page_Register {
 				func.element_sendkey(local_driver, test, xpathphoneNumInfor, input_values);
 			}
 			
-			public void compare_lastInfor() {
-				
+			public void compare_MessExist(ExtentTest test) {
+				WebElement getMEss= local_driver.findElement(By.xpath(xpathMess));
+				String AcutalMess = getMEss.getText();
+				Assert.assertEquals(AcutalMess, expectMess);
+				test.info("Enter Compare Mess");
+			}
+			
+			public void click_logout(ExtentTest test) {
+				func.element_click(local_driver, test, xpathLogout);				
+			}
+			
+			public void click_BtnCreate(ExtentTest test) {
+				func.element_click_byJS(local_driver, test, xpathBtnCreate);		
+				try {
+					Thread.sleep(2500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			public void compare_MessCreate() {
+				WebElement eleMess = local_driver.findElement(By.xpath(xpathMesstitle));
+				String ActualMess = eleMess.getText();
+				Assert.assertEquals(ActualMess, ExpectMessCreate);
 			}
 }

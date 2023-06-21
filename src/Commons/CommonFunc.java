@@ -8,6 +8,7 @@ import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -64,5 +65,17 @@ public class CommonFunc {
 		test.info("Enter Email: "+ ele_sendkey.getAttribute("value"));
 	}
 	
+	public String getAttributeValues(WebDriver driver, String xpath, String attributeName) {
+		WebElement ele = driver.findElement(By.xpath(xpath));
+		String value = ele.getAttribute(attributeName);
+		return value;
+	}
+	
+	public void element_click_byJS(WebDriver driver, ExtentTest test, String xpath) {
+		WebElement element_click = driver.findElement(By.xpath(xpath));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", element_click);
+		
+	}
 
 }

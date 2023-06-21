@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="19169" started-at="2023-06-14T19:04:05 ICT" finished-at="2023-06-14T19:04:24 ICT">
+  <suite name="Suite1" duration-ms="28080" started-at="2023-06-21T18:16:47 ICT" finished-at="2023-06-21T18:17:15 ICT">
     <groups>
     </groups>
-    <test name="RunCC" duration-ms="19169" started-at="2023-06-14T19:04:05 ICT" finished-at="2023-06-14T19:04:24 ICT">
+    <test name="RunCC" duration-ms="28080" started-at="2023-06-21T18:16:47 ICT" finished-at="2023-06-21T18:17:15 ICT">
       <class name="Vluong_Day11.RegisterUser">
-        <test-method status="PASS" signature="Rundriver(java.lang.String)[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="Rundriver" is-config="true" duration-ms="4177" started-at="2023-06-14T19:04:05 ICT" finished-at="2023-06-14T19:04:09 ICT">
+        <test-method status="PASS" signature="Rundriver(java.lang.String)[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="Rundriver" is-config="true" duration-ms="4127" started-at="2023-06-21T18:16:47 ICT" finished-at="2023-06-21T18:16:51 ICT">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Rundriver -->
-        <test-method status="PASS" signature="initdata()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="initdata" is-config="true" duration-ms="1" started-at="2023-06-14T19:04:09 ICT" finished-at="2023-06-14T19:04:09 ICT">
+        <test-method status="PASS" signature="initdata()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="initdata" is-config="true" duration-ms="1" started-at="2023-06-21T18:16:51 ICT" finished-at="2023-06-21T18:16:51 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initdata -->
-        <test-method status="PASS" signature="TC_001RegisterNewUser()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="TC_001RegisterNewUser" duration-ms="11276" started-at="2023-06-14T19:04:09 ICT" finished-at="2023-06-14T19:04:21 ICT">
+        <test-method status="PASS" signature="TC_001RegisterNewUser()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="TC_001RegisterNewUser" duration-ms="11001" started-at="2023-06-21T18:16:51 ICT" finished-at="2023-06-21T18:17:02 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_001RegisterNewUser -->
-        <test-method status="PASS" signature="saveAttachment()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="saveAttachment" is-config="true" duration-ms="2953" started-at="2023-06-14T19:04:21 ICT" finished-at="2023-06-14T19:04:24 ICT">
+        <test-method status="PASS" signature="saveAttachment()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="saveAttachment" is-config="true" duration-ms="2983" started-at="2023-06-21T18:17:02 ICT" finished-at="2023-06-21T18:17:05 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAttachment -->
-        <test-method status="PASS" signature="AfterRun()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="AfterRun" is-config="true" duration-ms="740" started-at="2023-06-14T19:04:24 ICT" finished-at="2023-06-14T19:04:24 ICT">
+        <test-method status="PASS" signature="initdata()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="initdata" is-config="true" duration-ms="0" started-at="2023-06-21T18:17:05 ICT" finished-at="2023-06-21T18:17:05 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initdata -->
+        <test-method status="PASS" signature="TC_002RegisterNewUserWithExistingEmail()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="TC_002RegisterNewUserWithExistingEmail" duration-ms="6496" started-at="2023-06-21T18:17:05 ICT" finished-at="2023-06-21T18:17:12 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_002RegisterNewUserWithExistingEmail -->
+        <test-method status="PASS" signature="saveAttachment()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="saveAttachment" is-config="true" duration-ms="2739" started-at="2023-06-21T18:17:12 ICT" finished-at="2023-06-21T18:17:14 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveAttachment -->
+        <test-method status="PASS" signature="AfterRun()[pri:0, instance:Vluong_Day11.RegisterUser@4fb64261]" name="AfterRun" is-config="true" duration-ms="712" started-at="2023-06-21T18:17:14 ICT" finished-at="2023-06-21T18:17:15 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterRun -->
