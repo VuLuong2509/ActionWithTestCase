@@ -7,9 +7,9 @@
       <class name="Vluong_Day11.RegisterUser">
         <methods>
           <include name="saveAttachment"/>
+          <include name="TC_002RegisterNewUserWithExistingEmail"/>
           <include name="Rundriver"/>
           <include name="initdata"/>
-          <include name="TC_001RegisterNewUser"/>
           <include name="AfterRun"/>
         </methods>
       </class> <!-- Vluong_Day11.RegisterUser -->
